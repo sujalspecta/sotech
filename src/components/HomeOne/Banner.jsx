@@ -1,33 +1,54 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// 1. Import the registration utility for Swiper Element
+import { register } from 'swiper/element/bundle';
+
 import SlideBgImage1 from '../../assets/images/main-slider/s1-1.jpg';
 import SlideBgImage2 from '../../assets/images/main-slider/s1-2.jpg';
 
-const swiperOptions = {
-    modules: [Autoplay, Pagination, Navigation],
-    slidesPerView: 1,
-    autoplay: {
-        delay: 5000, 
-        disableOnInteraction: false,
-    },
-    pagination:{
-        clickable: true,
-    },
-    loop: true,
-};
+// 2. Register Swiper custom elements (Web Components)
+register();
 
 function BannerSection({ className }) {
+    const swiperRef = useRef(null);
+
+    // Extract the raw URL string if your bundler imports images as objects
+    const img1 = typeof SlideBgImage1 === 'object' ? SlideBgImage1.default || SlideBgImage1 : SlideBgImage1;
+    const img2 = typeof SlideBgImage2 === 'object' ? SlideBgImage2.default || SlideBgImage2 : SlideBgImage2;
+
+    // 3. Initialize Swiper properties using a configuration object inside useEffect
+    useEffect(() => {
+        const swiperContainer = swiperRef.current;
+        
+        const swiperOptions = {
+            slidesPerView: 1,
+            autoplay: {
+                delay: 5000, 
+                disableOnInteraction: false,
+            },
+            pagination: {
+                clickable: true,
+            },
+            loop: true,
+        };
+
+        if (swiperContainer) {
+            Object.assign(swiperContainer, swiperOptions);
+            swiperContainer.initialize();
+        }
+    }, []);
+
     return (
         <section className={`banner-section-six ${className || ''}`}>
-            <Swiper {...swiperOptions} className="banner-carousel owl-theme">
-                {/* <!-- Slide Item --> */}
-                <SwiperSlide className="slide-item">
-                    <div className="bg-image" style={{ backgroundImage: `url(${SlideBgImage1})` }}/>
+            {/* 4. Use custom Web Component tags instead of old React wrappers */}
+            <swiper-container 
+                ref={swiperRef} 
+                init="false" 
+                class="banner-carousel owl-theme"
+            >
+                {/* <!-- Slide Item 1 --> */}
+                <swiper-slide class="slide-item">
+                    <div className="bg-image" style={{ backgroundImage: `url(${img1})` }}/>
                     <div className="auto-container">
                         <div className="content-box">
                             <div className="inner-content">
@@ -45,11 +66,11 @@ function BannerSection({ className }) {
                             </div>
                         </div>
                     </div>
-                </SwiperSlide>
+                </swiper-slide>
                 
-                {/* <!-- Slide Item --> */}
-                <SwiperSlide className="slide-item">
-                    <div className="bg-image" style={{ backgroundImage: `url(${SlideBgImage2})` }}/>
+                {/* <!-- Slide Item 2 --> */}
+                <swiper-slide class="slide-item">
+                    <div className="bg-image" style={{ backgroundImage: `url(${img2})` }}/>
                     <div className="auto-container">
                         <div className="content-box">
                             <div className="inner-content">
@@ -67,11 +88,11 @@ function BannerSection({ className }) {
                             </div>
                         </div>
                     </div>
-                </SwiperSlide>
+                </swiper-slide>
                 
-                {/* <!-- Slide Item --> */}
-                <SwiperSlide className="slide-item">
-                    <div className="bg-image" style={{ backgroundImage: `url(${SlideBgImage1})` }}/>
+                {/* <!-- Slide Item 3 --> */}
+                <swiper-slide class="slide-item">
+                    <div className="bg-image" style={{ backgroundImage: `url(${img1})` }}/>
                     <div className="auto-container">
                         <div className="content-box">
                             <div className="inner-content">
@@ -89,8 +110,8 @@ function BannerSection({ className }) {
                             </div>
                         </div>
                     </div>
-                </SwiperSlide>
-            </Swiper>
+                </swiper-slide>
+            </swiper-container>
         </section>
     );
 }

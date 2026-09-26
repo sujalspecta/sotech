@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import CountUp3 from "react-countup";
-
+import CountUp3c from "react-countup";
+const CountUp3 = CountUp3c.default || CountUp3c
 export default function CounterUp({ count, time }) {
     const [counterOn, setCounterOn] = useState(false);
     const counterRef = useRef(null);

@@ -1,36 +1,53 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import ModalVideo from 'react-modal-video';
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import ModalVideoc from 'react-modal-video';
+// 1. Import the registration utility for Swiper Element
+import { register } from 'swiper/element/bundle';
+
 import SlideImage1 from '../../assets/images/main-slider/s2-1.jpg'; 
 import SlideImage2 from '../../assets/images/main-slider/s2-2.jpg'; 
 import SlideShapeImage from '../../assets/images/main-slider/s2-shape-1.png'; 
-
-const swiperOptions = {
-    modules: [Autoplay, Pagination, Navigation],
-    slidesPerView: 1,
-    autoplay: {
-        delay: 5000, 
-        disableOnInteraction: false,
-    },
-    loop: true,
-    navigation: {
-        clickable: true,
-        el: '.swiper-nav',
-    },
-};
+const ModalVideo = ModalVideoc.default || ModalVideoc
+// 2. Register Swiper custom elements (Web Components)
+register();
 
 function BannerSection() {
     const [isOpen, setOpen] = useState(false);
-    return (
+    const swiperRef = useRef(null);
 
+    // 3. Initialize Swiper properties using a configuration object inside useEffect
+    useEffect(() => {
+        const swiperContainer = swiperRef.current;
+        
+        const swiperOptions = {
+            slidesPerView: 1,
+            autoplay: {
+                delay: 5000, 
+                disableOnInteraction: false,
+            },
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-nav-next', // Updated selector targets for Swiper Web Components
+                prevEl: '.swiper-nav-prev',
+            },
+        };
+
+        if (swiperContainer) {
+            Object.assign(swiperContainer, swiperOptions);
+            swiperContainer.initialize();
+        }
+    }, []);
+
+    return (
         <section className="banner-section-five">
-            <Swiper {...swiperOptions} className="banner-carousel owl-theme">
-                <SwiperSlide className="slide-item">
+            {/* 4. Use custom Web Component tags instead of old React wrappers */}
+            <swiper-container 
+                ref={swiperRef} 
+                init="false" 
+                class="banner-carousel owl-theme"
+            >
+                {/* Slide 1 */}
+                <swiper-slide class="slide-item">
                     <div className="bg-image" style={{ backgroundImage: `url(${SlideImage1})` }}/>
                     <div className="auto-container">
                         <div className="content-box">
@@ -45,11 +62,12 @@ function BannerSection() {
                                     <Link to="/page-about" className="theme-btn btn-style-one"><span className="btn-title">EXPLORE MORE</span></Link>
                                 </div>
                             </div>
-                            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="Fvae8nxzVz4" onClose={() => setOpen(false)} />
                         </div>
                     </div>
-                </SwiperSlide>
-                <SwiperSlide className="slide-item">
+                </swiper-slide>
+
+                {/* Slide 2 */}
+                <swiper-slide class="slide-item">
                     <div className="bg-image" style={{ backgroundImage: `url(${SlideImage2})` }}/>
                     <div className="auto-container">
                         <div className="content-box">
@@ -64,11 +82,12 @@ function BannerSection() {
                                     <Link to="/page-about" className="theme-btn btn-style-one"><span className="btn-title">EXPLORE MORE</span></Link>
                                 </div>
                             </div>
-                            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="Fvae8nxzVz4" onClose={() => setOpen(false)} />
                         </div>
                     </div>
-                </SwiperSlide>
-                <SwiperSlide className="slide-item">
+                </swiper-slide>
+
+                {/* Slide 3 */}
+                <swiper-slide class="slide-item">
                     <div className="bg-image" style={{ backgroundImage: `url(${SlideImage1})` }}/>
                     <div className="auto-container">
                         <div className="content-box">
@@ -83,11 +102,13 @@ function BannerSection() {
                                     <Link to="/page-about" className="theme-btn btn-style-one"><span className="btn-title">EXPLORE MORE</span></Link>
                                 </div>
                             </div>
-                            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="Fvae8nxzVz4" onClose={() => setOpen(false)} />
                         </div>
                     </div>
-                </SwiperSlide>
-            </Swiper>
+                </swiper-slide>
+            </swiper-container>
+
+            {/* Placed ModalVideo once outside the slider loop to avoid DOM duplication issues */}
+            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="Fvae8nxzVz4" onClose={() => setOpen(false)} />
         </section>
     );
 }

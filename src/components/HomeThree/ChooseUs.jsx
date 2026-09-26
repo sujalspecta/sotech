@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import ModalVideo from 'react-modal-video';
+import ModalVideoc from 'react-modal-video';
 import ProgressBar from '../../lib/ProgressBar.jsx';
 import ChooseUsImage from '../../assets/images/resource/why-us-3.jpg';
+const ModalVideo = ModalVideoc.default || ModalVideoc
 
 function ChooseUs() {
     const [isOpen, setOpen] = useState(false);

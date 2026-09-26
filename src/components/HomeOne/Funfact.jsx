@@ -1,6 +1,7 @@
 import React from 'react';
-import CounterUp from '../../lib/CounterUp.jsx';
+import CounterUpc from '../../lib/CounterUp.jsx';
 import FunfactBgImage from '../../assets/images/background/7.jpg';
+const CounterUp = CounterUpc.default || CounterUpc
 
 function Funfact({ className }) {
     const percentage1 = 4524;

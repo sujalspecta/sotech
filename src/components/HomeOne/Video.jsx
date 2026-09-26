@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
-import ModalVideo from 'react-modal-video';
+import ModalVideoc from 'react-modal-video';
 import VideoImage from '../../assets/images/resource/image-4.jpg';
+const ModalVideo = ModalVideoc.default || ModalVideoc
 
 function Video({ className }) {
     const [isOpen, setOpen] = useState(false);
