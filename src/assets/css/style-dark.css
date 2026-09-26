@@ -1,0 +1,170 @@
+body.dark-mode {
+  background-color: var(--dark-color1);
+}
+
+body.dark-mode {
+  --dark-color1: #0F0F0F;
+  --dark-color2: #181818;
+  --dark-color3: #2b242b;
+  --text-color: #a3a5aa;
+}
+body.dark-mode body,
+body.dark-mode .page-wrapper,
+body.dark-mode .header-style-two .header-lower,
+body.dark-mode .feature-block-two .inner-box,
+body.dark-mode .about-section,
+body.dark-mode .project-section,
+body.dark-mode .testimonial-block-five .inner-box,
+body.dark-mode .contact-section-three .content-column .call-info-box,
+body.dark-mode .about-section-four .content-column .blockquote-style-one,
+body.dark-mode .contact-section-two .info-column .inner-column:before,
+body.dark-mode .project-section-four,
+body.dark-mode .time-table-box .inner,
+body.dark-mode .sticky-header.fixed-header {
+  background-color: var(--dark-color1);
+}
+body.dark-mode .service-block-two .count::after, body.dark-mode .service-block-two .count::before {
+  background: -webkit-gradient(linear, left top, right top, from(var(--dark-color1)), to(transparent));
+  background: linear-gradient(to right, var(--dark-color1), transparent);
+}
+body.dark-mode .header-style-two .header-lower .main-box .logo-box:before,
+body.dark-mode .header-style-two .header-lower .main-box .logo-box:after,
+body.dark-mode .features-section-two:before,
+body.dark-mode .testimonial-block-five .content-box,
+body.dark-mode .offer-section-five:before,
+body.dark-mode .team-block .info-box,
+body.dark-mode .contact-section-three:after,
+body.dark-mode .news-block .content-box,
+body.dark-mode .project-section-three:before,
+body.dark-mode .tabs-three .tab-buttons .tab-btn.active-btn,
+body.dark-mode .tabs-three .tabs-content,
+body.dark-mode .about-section-four:before,
+body.dark-mode .features-section-four .outer-box,
+body.dark-mode .team-block-two .inner-box:before,
+body.dark-mode .contact-section-three.style-three,
+body.dark-mode .services-section-three:after,
+body.dark-mode .service-block-three .inner-box:before,
+body.dark-mode .pricing-block-two .inner-box {
+  background-color: var(--dark-color2);
+}
+body.dark-mode .news-block .bottom-box {
+  background-color: var(--dark-color3);
+}
+body.dark-mode .btn-style-three,
+body.dark-mode .about-section-ten .content-bottom .call-info-box-outer,
+body.dark-mode .news-section-two {
+  background-color: #000;
+}
+body.dark-mode .service-block .inner-box {
+  border-color: var(--dark-color1);
+}
+body.dark-mode .about-section .image-column .image-2,
+body.dark-mode .news-block .content-box {
+  border-color: var(--dark-color2);
+}
+body.dark-mode .clients-section.border-bottom {
+  border-color: var(--dark-color2) !important;
+}
+body.dark-mode .testimonial-block-five .content-box:before {
+  border-top-color: var(--dark-color2);
+}
+body.dark-mode .news-block .bottom-box {
+  border-color: var(--dark-color3);
+}
+body.dark-mode .clients-section.border-top {
+  border-top-color: var(--dark-color3) !important;
+}
+body.dark-mode .news-carousel .owl-nav .owl-next,
+body.dark-mode .news-carousel .owl-nav .owl-prev {
+  border-color: var(--text-color);
+}
+body.dark-mode body,
+body.dark-mode .header-style-two .main-menu .navigation > li > a,
+body.dark-mode .header-style-two .ui-btn,
+body.dark-mode .header-style-two .header-lower .main-box .outer-box .mobile-nav-toggler,
+body.dark-mode .sec-title .text,
+body.dark-mode .list-style-two li,
+body.dark-mode .testimonial-block-five .content-box .text,
+body.dark-mode .service-block-seven .text,
+body.dark-mode .offer-section-five .content-column .info-box .title,
+body.dark-mode .contact-section-three .content-column .call-info-box span,
+body.dark-mode .contact-section-three .expert-info-box .expert-text span,
+body.dark-mode .about-section-four .float-text,
+body.dark-mode .news-carousel .owl-nav .owl-next,
+body.dark-mode .news-carousel .owl-nav .owl-prev,
+body.dark-mode .about-section-seven .content-column .info-box-two .title {
+  color: var(--text-color);
+}
+body.dark-mode .sec-title h2,
+body.dark-mode .feature-block-two .title,
+body.dark-mode .founder-info .name,
+body.dark-mode .testimonial-block-five .name,
+body.dark-mode .team-block .info-box .name,
+body.dark-mode .contact-section-three .content-column .call-info-box-outer .call-info-box-text span,
+body.dark-mode .news-block .content-box .title,
+body.dark-mode .feature-block-nine .title,
+body.dark-mode .about-block-three .title,
+body.dark-mode .skills .skill-item .skill-header .skill-title,
+body.dark-mode .testimonial-block .name,
+body.dark-mode .offer-section-two .image-column .video-box .title,
+body.dark-mode .tabs-three .tab-buttons .tab-btn.active-btn,
+body.dark-mode .about-section-nine .info-box .title,
+body.dark-mode .about-section-four .content-column .blockquote-style-one,
+body.dark-mode .contact-section-two .info-column .info-box .title,
+body.dark-mode .about-section-ten .content-column .info-box .title,
+body.dark-mode .team-block-two .info-box .name,
+body.dark-mode .contact-details-info h3,
+body.dark-mode .contact-details-block .text,
+body.dark-mode .time-table-box .title,
+body.dark-mode .service-block-three .title,
+body.dark-mode .pricing-block-two .title,
+body.dark-mode .pricing-block-two .price {
+  color: #fff;
+}
+body.dark-mode .main-menu .navigation > li:hover > a,
+body.dark-mode .main-menu .navigation > li.current > a {
+  color: var(--theme-color2);
+}
+body.dark-mode .founder-info .designation {
+  color: #6A6F78;
+}
+body.dark-mode .header-style-two {
+  background-color: unset;
+}
+body.dark-mode .offer-section-five:before,
+body.dark-mode .contact-section-three:after,
+body.dark-mode .pricing-section-two {
+  background-image: unset;
+}
+body.dark-mode .bg-pattern-1 {
+  background-image: url(../images/icons/pattern-14.jpg);
+}
+body.dark-mode .about-section-three .image-column .inner-column:after {
+  background-image: url(../images/icons/icon-dots-3-dark.png);
+}
+body.dark-mode .about-section-seven:before {
+  background-image: url(../images/icons/bg-shape-tm-3-dark.png);
+}
+body.dark-mode .contact-form .form-group textarea {
+  background-color: #0a090f;
+}
+body.dark-mode .contact-form .form-group input:not([type=submit]) {
+  background-color: #0a090f;
+}
+body.dark-mode .contact-form-two .form-group .select2-container--default .select2-selection--single,
+body.dark-mode .contact-form-two .form-group input:not([type=submit]),
+body.dark-mode .contact-form-two .form-group textarea, body.dark-mode .contact-form-two .form-group select {
+  background-color: #212529;
+  border-color: var(--dark-color3);
+  color: var(--text-color);
+}
+body.dark-mode .contact-form-two .form-group input:focus,
+body.dark-mode .contact-form-two .form-group select:focus,
+body.dark-mode .contact-form-two .form-group textarea:focus {
+  border-color: var(--dark-color1);
+  color: #fff;
+}
+body.dark-mode .clients-carousel .slide-item img {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
